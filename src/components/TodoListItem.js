@@ -1,14 +1,14 @@
 import React, { memo } from 'react';
 
-export const TodoListItem = memo(({ todo, handleListItemComplete }) => {
+export const TodoListItem = memo(({ todo, handleListItemComplete, removeTodo }) => {
 
     return (
         <li 
             onClick={ () => handleListItemComplete( todo.id ) } 
             className={ 
-                (todo.done) 
-                    ? 'list-group-item list list-group-item-success text-decoration-line-through'
-                    : 'list-group-item list list-group-item-danger'
+                (!todo.done) 
+                    ? 'list-group-item list list-group-item-danger'
+                    : 'list-group-item list list-group-item-success text-decoration-line-through'
             }   
             >
                 {
@@ -18,7 +18,10 @@ export const TodoListItem = memo(({ todo, handleListItemComplete }) => {
                 } { todo.textTodo }
             
             {
-                (todo.done) && <i className="fas fa-trash"></i>
+                (todo.done) && 
+                    <i 
+                        onClick={ () => removeTodo( todo.id ) }
+                        className="fas fa-trash"></i>
             }
         </li>
     )

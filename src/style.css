@@ -15,8 +15,11 @@ ul li {
     cursor: pointer;
 }
 
-i[class*="trash"]{
-    margin-top: 5px;
+i[class$="trash"]{
     float: right;
-
+    margin-top: 2px;
+    padding: 3px;
+    border-radius: 50px;
+    background-color: white;
+    box-shadow: 2px 2px 2px 0,5px grey;
 }

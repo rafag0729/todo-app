@@ -20,5 +20,13 @@ export const completeTodo = (todoId) => {
     }
 }
 
+export const removeTodo = (todoId) => {
+
+    return {
+        type: 'Remove Todo',
+        payload: todoId
+    }
+}
+
 
 //DeleteTodo
