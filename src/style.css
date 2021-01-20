@@ -1,0 +1,22 @@
+.container {
+    width: 600px;
+    height: 600px;
+}
+
+input[type="text"]{
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    cursor: pointer;
+}
+
+i[class*="trash"]{
+    margin-top: 5px;
+    float: right;
+
+}
