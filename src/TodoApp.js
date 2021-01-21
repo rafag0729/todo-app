@@ -5,6 +5,7 @@ import { todoReducer } from './reducer/todoReducer';
 import { addTodo, completeTodo, removeTodo } from './reducer/todoActions';
 
 import './style.css';
+import { Form } from './components/Form';
 
 
 const init = () => {
@@ -77,26 +78,13 @@ export const TodoApp = () => {
 
             <p> En este campo podras añadir un nuevo To-Do</p>
 
-            <form onSubmit={ handleSubmit }>
-                <input 
-                    className="form-control-lg" 
-                    autoComplete="off"
-                    type="text"
-                    name="todo-text"
-                    value={ formValue } 
-                    onChange={ handleInputChange }
-                    placeholder="Añade un nuevo To-Do" />
-
-                    <div className="mt-3 clearfix">
-                        {
-                            (error.status) &&
-                                <span className="float-left bg-danger p-1">{ error.msg }</span>
-                        }
-                        
-                        <button className="btn btn-success float-end">Añadir</button>
-                    </div>
-            </form>
-
+            <Form
+                handleSubmit={ handleSubmit }
+                formValue={ formValue }
+                handleInputChange={ handleInputChange }
+                error={ error }
+                />
+                
              <ul className='list-group mt-5'>
             {
                 todos.map((todo) => (
@@ -112,14 +100,4 @@ export const TodoApp = () => {
         </div>
     )
 }
-
-/*
-PARA MEJORAR EN ESTA APP
-
-- //Habilitar que el usuario pueda tachar y destachar todo
-- //Agregar error si se ingresa un todo con menos de 5 caracteres
-- //Hacer Split en varios componentes
-- Permitir hasta 7 todo
-- Permitir borrar todo
-*/
 
