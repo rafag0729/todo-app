@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
 import { TodoListItem } from './components/TodoListItem';
 import { useForm } from './hooks/useForm';
 import { todoReducer } from './reducer/todoReducer';
@@ -6,9 +6,14 @@ import { addTodo, completeTodo, removeTodo } from './reducer/todoActions';
 
 import './style.css';
 
-export const TodoApp = () => {
 
-    console.log('new render');
+const init = () => {
+
+    return JSON.parse(localStorage.getItem('todos')) || [];
+}
+
+
+export const TodoApp = () => {
 
     //Error state
     const [error, setError] = useState({
@@ -19,7 +24,14 @@ export const TodoApp = () => {
     const [ formValue, handleInputChange, reset ] = useForm(); 
 
     //Reducer
-    const [todos, dispatch ] = useReducer(todoReducer, []);
+    const [todos, dispatch ] = useReducer(todoReducer, [], init);
+
+    useEffect(() => {
+        
+        localStorage.setItem('todos', JSON.stringify(todos));
+
+    }, [todos])
+
 
     //Actions
     const handleSubmit = (e) => {
@@ -85,7 +97,7 @@ export const TodoApp = () => {
                     </div>
             </form>
 
-            <ul className='list-group mt-5'>
+             <ul className='list-group mt-5'>
             {
                 todos.map((todo) => (
                     <TodoListItem
@@ -96,7 +108,6 @@ export const TodoApp = () => {
                 ))
             }
             </ul>
-            
             
         </div>
     )
