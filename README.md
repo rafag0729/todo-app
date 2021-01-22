@@ -13,4 +13,19 @@ This is a basic todo app to start practicing the concepts learned about React an
 - [x] Add remove action for a Todo selected
 - [x] Make sure the state info can keep persistent after page refresh
 
+## Video
+
+https://youtu.be/yTVcCrdO42U - Video in Youtube!
+[Youtube](https://youtu.be/yTVcCrdO42U)
+
+## Images
+
+![First snapshot](/img/snapshot1.JPG)
+Format: ![Snapshot1](url)
+
+![Second snapshot](/img/snapshot2.JPG)
+Format: ![Snapshot2](url)
+
 > Anybody is free to clone and use this repository to exploit your creativity yas you want, also any Feedback would be greatly appreciated :100: :hugs:	
+
+
