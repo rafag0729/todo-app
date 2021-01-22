@@ -21,10 +21,9 @@ https://youtu.be/yTVcCrdO42U - Video in Youtube!
 ## Images
 
 ![First snapshot](/img/snapshot1.JPG)
-Format: ![Snapshot1](url)
 
 ![Second snapshot](/img/snapshot2.JPG)
-Format: ![Snapshot2](url)
+
 
 > Anybody is free to clone and use this repository to exploit your creativity yas you want, also any Feedback would be greatly appreciated :100: :hugs:	
 
